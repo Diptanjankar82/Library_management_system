@@ -23,10 +23,15 @@ public class LibraryCard {
 
     private int cardNo;
 
+    @Enumerated(value = EnumType.STRING)
     private CardStatus cardStatus;
 
     private int noOfBookIssued;
 
     private Date validity;
+
+    @JoinColumn // This tells that a new Column is adding the DB
+    @OneToOne // Mapping
+    private Student student; // connect to student (Student obj.)
 
 }

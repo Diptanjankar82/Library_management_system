@@ -1,0 +1,6 @@
+Controller => Api endPoint (Postman intraction)
+
+Repositories => Database (it extends the JPA repo)
+             => benifit of using JPA it provides interface that we can use easily
+
+@Autowired --> is helping us to connecting with different layers
