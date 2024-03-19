@@ -1,4 +1,4 @@
-package com.management.LibraryManagementSystem;
+package com.management.LibraryManagementSystem.Enums;
 
 public enum CardStatus {
 

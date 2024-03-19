@@ -1,6 +1,6 @@
 package com.management.LibraryManagementSystem.Services;
 
-import com.management.LibraryManagementSystem.CardStatus;
+import com.management.LibraryManagementSystem.Enums.CardStatus;
 import com.management.LibraryManagementSystem.Entities.LibraryCard;
 import com.management.LibraryManagementSystem.Entities.Student;
 import com.management.LibraryManagementSystem.Repositories.CardRepository;

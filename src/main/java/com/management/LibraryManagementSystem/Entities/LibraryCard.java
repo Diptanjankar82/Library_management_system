@@ -1,7 +1,7 @@
 package com.management.LibraryManagementSystem.Entities;
 
 
-import com.management.LibraryManagementSystem.CardStatus;
+import com.management.LibraryManagementSystem.Enums.CardStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,5 +33,6 @@ public class LibraryCard {
     @JoinColumn // This tells that a new Column is adding the DB
     @OneToOne // Mapping
     private Student student; // connect to student (Student obj.)
+    //Connecting entities after that automatically the primary key of the student table put in the child table (card)
 
 }
