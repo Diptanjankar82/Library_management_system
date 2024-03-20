@@ -8,6 +8,7 @@ import com.management.LibraryManagementSystem.Repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Service
@@ -26,7 +27,8 @@ public class CardService {
         card.setCardStatus(CardStatus.NEW);
         card.setNoOfBookIssued(0);
 
-        Date expiryDate = new Date(128,6,1);
+        LocalDate expiryDate = LocalDate.of(2128, 6, 1);
+
         card.setValidity(expiryDate);
 
         card = cardRepository.save(card);

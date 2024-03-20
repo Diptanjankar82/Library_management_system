@@ -1,0 +1,9 @@
+Transaction entity has 4 table
+ -> TransId
+ -> TransStatus
+ -> BookId
+ -> CardId
+
+ BookId, CardId -- Acting as a foregin key
+
+ one to many = Card to TransactionTable

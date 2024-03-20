@@ -28,9 +28,12 @@ public class BookController {
     @PutMapping("/associateBookAndAuthor")
     public String associateBookAndAuthor(@RequestParam("bookId")Integer bookId,
                                          @RequestParam("authorId")Integer authorId){
-        String result = bookService.associateBookAndAuthor(bookId, authorId);
-        return result;
-
+       try {
+           String result = bookService.associateBookAndAuthor(bookId, authorId);
+           return result;
+       } catch (Exception e){
+           return e.getMessage();
+       }
     }
     @GetMapping("/getBookByAuthor")
     public List<Book> getBookListByAuthor(@RequestParam("authorId")Integer authorId){

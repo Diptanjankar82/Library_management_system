@@ -22,6 +22,8 @@ public class Book {
     @Enumerated(value = EnumType.STRING)
     private Genre genre;
 
+    private boolean isIssued;
+
     private Integer Price;
 
     @JoinColumn
