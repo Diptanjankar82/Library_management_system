@@ -21,6 +21,11 @@ public class AuthorController {
         String result = authorService.addAuthor(author);
         return result;
     }
+    @GetMapping("/getAuthorWithMaxBook")
+    public Author getAuthor(){
+        Author ansAuthor = authorService.getAuthorWithMaxBooks();
+        return ansAuthor;
+    }
 
 
 }

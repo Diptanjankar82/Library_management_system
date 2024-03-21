@@ -26,6 +26,7 @@ public class BookService {
             throw new InvalidPageCountException("Page count entered is incorrect");
 
         }
+        book.setIssued(Boolean.FALSE);
       bookRepository.save(book);
       return "Book has benn saved to DB";
     }
@@ -53,8 +54,6 @@ public class BookService {
 
         //associate book and author Entity
         book.setAuthor(author);
-
-
         author.setNoOfBooks(author.getNoOfBooks()+1);
         bookRepository.save(book);
         authorRepository.save(author);

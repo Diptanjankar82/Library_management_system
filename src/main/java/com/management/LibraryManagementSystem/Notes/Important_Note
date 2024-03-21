@@ -4,3 +4,10 @@ Repositories => Database (it extends the JPA repo)
              => benifit of using JPA it provides interface that we can use easily
 
 @Autowired --> is helping us to connecting with different layers
+
+3 ways to communicate with JPA
+   1. Already defind method(save,findAll,get)
+   2. No query needed defined method and use it
+   3. write query and use it
+
+

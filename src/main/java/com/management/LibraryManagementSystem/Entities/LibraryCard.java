@@ -31,6 +31,8 @@ public class LibraryCard {
 
     private LocalDate validity;
 
+    // In case we want to connect/Join (LibraryCard) & (Student) table then we use this annotation (@JoinColumn)
+    // it simply join using Foregin key here the student student id using as a foregin key
     @JoinColumn // This tells that a new Column is adding the DB
     @OneToOne // Mapping
     private Student student; // connect to student (Student obj.)

@@ -4,10 +4,9 @@ package com.management.LibraryManagementSystem.Controller;
 import com.management.LibraryManagementSystem.Entities.Student;
 import com.management.LibraryManagementSystem.Services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController // here we wrote API endPoint
 @RequestMapping("/student")
@@ -21,4 +20,5 @@ public class StudentController {
         String result = studentService.addStudent(student);
         return result;
     }
+
 }

@@ -22,11 +22,14 @@ public class Book {
     @Enumerated(value = EnumType.STRING)
     private Genre genre;
 
-    private boolean isIssued;
+    public boolean isIssued;
 
-    private Integer Price;
+    public int Price;
 
     @JoinColumn
     @ManyToOne
     private Author author;
+
+
+
 }

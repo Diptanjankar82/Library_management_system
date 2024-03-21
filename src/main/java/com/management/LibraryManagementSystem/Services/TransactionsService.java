@@ -11,8 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class TransactionsService {
@@ -25,7 +27,9 @@ public class TransactionsService {
     @Autowired
     private TransactionsRepository transactionsRepository;
 
-    public static Integer MAX_NO_OF_ISSUED_BOOKS = 3;
+    public static final Integer MAX_NO_OF_ISSUED_BOOKS = 3;
+
+    public static final Integer finePerDay = 3;
 
     public String issueBook(Integer bookId , Integer cardId) throws Exception{
 
@@ -81,7 +85,7 @@ public class TransactionsService {
         }
 
         //HAPPY HAPPY HAPPY
-        transaction.setTransactionStatus(TransactionStatus.SUCCESS);
+        transaction.setTransactionStatus(TransactionStatus.ISSUED);
 
         book.setIssued(true);
         card.setNoOfBookIssued(card.getNoOfBookIssued()+1);
@@ -92,6 +96,38 @@ public class TransactionsService {
         transaction = (Transaction) transactionsRepository.save(transaction);
         return "The transaction has been completed with transactionId"+ transaction.getTransactionId();
 
+    }
+    public String returnBook(Integer bookId,Integer cardId){
+
+        //i need to find out the Transaction : with the bookId, cardId and ISSUED Status
+
+        Book book = bookRepository.findById(bookId).get();
+        LibraryCard card = cardRepository.findById(cardId).get();
+
+        Transaction transaction = transactionsRepository.findTransactionByBookAndCardAndTransactionStatus(book,card,TransactionStatus.ISSUED);
+
+        //Find Fine amount
+        long timeDifferent = System.currentTimeMillis() - transaction.getIssueDate().getTime();
+
+        //This time is in MS, we need to convert this to days
+        Long days = TimeUnit.DAYS.convert(timeDifferent,TimeUnit.MICROSECONDS);
+        Integer fineamt = 0;
+        if(days>15){
+            fineamt = Math.toIntExact((days-15)*finePerDay);
+        }
+
+        //Sve the transaction
+        transaction.setFineAmount(fineamt);
+        transaction.setTransactionStatus(TransactionStatus.COMPLETED);
+        transaction.setReturnDate(new Date());//automatically set the current date in the system
+        book.setIssued(Boolean.FALSE);
+        card.setNoOfBookIssued(card.getNoOfBookIssued()-1);
+
+        transactionsRepository.save(transaction);
+        cardRepository.save(card);
+        bookRepository.save(book);
+
+        return "Book has beeen returned";
     }
 
 }
