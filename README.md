@@ -34,6 +34,7 @@ The Library Management System is designed to facilitate the management of books 
 - **User**: Used for authentication and authorization with attributes like user_id, Authorization, Username, and Password.
 
 
+
 ## Functionalities Exposed
 ### Student Controller
 - Exposes CRUD APIs for creating, updating, and deleting student information.
@@ -54,8 +55,18 @@ The Library Management System is designed to facilitate the management of books 
 ## Branches
 - The `Security` branch includes security-related enhancements.
 
-## Conclusion
+## Conclusion![Screenshot (393)](https://github.com/Diptanjankar82/Library_management_system/assets/117863856/bcf412f6-b434-4a35-888e-3639f6642afe)
+
+![Screenshot (394)](https://github.com/Diptanjankar82/Library_management_system/assets/117863856/5fe232da-98a9-4e70-b5c7-d8d3ba1155d2)
+
+![Screenshot (395)](https://github.com/Diptanjankar82/Library_management_system/assets/117863856/d3e7f041-b54b-4b45-8c2a-c29daa609dd9)
+
+![Screenshot (396)](https://github.com/Diptanjankar82/Library_management_system/assets/117863856/21209239-6667-42f4-8ac3-f59c276247fc)
+
+NOT COMPLETED ........ 
 The Library Management System offers a robust backend solution for managing library resources efficiently. Built with Java, Spring Boot, Hibernate, and MySQL, it provides a user-friendly interface for students and administrators to manage library operations seamlessly.
+
+
 
 ##Author
 
