@@ -26,15 +26,13 @@ The Library Management System is designed to facilitate the management of books 
 
 ## Backend Design
 ### Entities
-- **Student**: Represents a student with attributes such as student_id, country, emailId, name, age, and card_id.
-- **Card**: Represents a card with attributes like card_id, createdOn, updatedOn, and status.
-- **Book**: Represents a book with attributes such as book_id, isAvailable, genre, and author_id.
-- **Author**: Represents an author with attributes like author_id, country, name, and emailId.
+- **Student**: Represents a student with attributes such as rollId, name, branch, age, cgpa, emailId.
+- **LibraryCard**: Represents a card with attributes like cardNo, cardStatus, noOfBookIssued, and validity.
+- **Book**: Represents a book with attributes such as book_id, title, noOfPages, genre,isIssued, and Price.
+- **Author**: Represents an author with attributes like author_id, name, age, rating, noOfBooks and emailId.
+- **Transaction**: Represents the Transaction Ststus like TransactionId, issueDate, returnDate, fineDate and fineAmount.
 - **User**: Used for authentication and authorization with attributes like user_id, Authorization, Username, and Password.
 
-### Relationships Between Entities and ER Diagram
-- An additional SQL table called Transaction is created to map the N:M relationship between Card and Book entities.
-- Transaction table includes attributes like transaction_id, UUID, card_id, book_id, isIssue, Transaction status, date, and fine amount.
 
 ## Functionalities Exposed
 ### Student Controller
@@ -58,3 +56,7 @@ The Library Management System is designed to facilitate the management of books 
 
 ## Conclusion
 The Library Management System offers a robust backend solution for managing library resources efficiently. Built with Java, Spring Boot, Hibernate, and MySQL, it provides a user-friendly interface for students and administrators to manage library operations seamlessly.
+
+##Author
+
+DIPTANJAN KAR
