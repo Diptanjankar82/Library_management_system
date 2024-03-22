@@ -15,7 +15,7 @@ The Library Management System is designed to facilitate the management of books 
 
 ## How to Use
 ### Using CLI:
-1. Clone the repository: `git clone https://github.com/saikat021/Library-Management-System.git`
+1. Clone the repository: `git clone https://github.com/Diptanjankar82/Library_management_system.git`
 2. Navigate to the project directory: `cd Library-Management-System`
 3. Build the project using Maven: `mvn package`
 4. Run the application: `java -jar target/Student-library-0.0.1-SNAPSHOT.jar`
